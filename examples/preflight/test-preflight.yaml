@@ -1,0 +1,14 @@
+apiVersion: troubleshoot.sh/v1beta2
+kind: Preflight
+metadata:
+  name: example
+spec:
+  analyzers:
+    - ingress:
+        namespace: default
+        ingressName: accounts-api-ingress
+        outcomes:
+          - fail:
+              message: accounts api does not have ingress configured
+          - pass:
+              message: Ingress rule found for accounts api.

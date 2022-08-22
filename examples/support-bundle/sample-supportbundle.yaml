@@ -35,7 +35,7 @@ spec:
     - containerRuntime:
         outcomes:
           - fail:
-              when: "== docker"
+              when: "!= docker"
               message: The application does not support docker
           - pass:
               message: A supported container runtime was found
